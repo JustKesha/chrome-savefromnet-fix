@@ -3,7 +3,7 @@
   "name": "Better SaveFrom.net Stylesheets",
   "version": "1.0.0",
   "description": "Fixes YouTube stylesheets for the SaveFrom.net extension.",
-  "homepage_url": "https://github.com/JustKesha/chrome-savefromnet-fix",
+  "homepage_url": "https://github.com/JustKesha/yt-savefromnet-fix",
   "icons": {
     "16": "images/icon-16.png",
     "48": "images/icon-48.png",
