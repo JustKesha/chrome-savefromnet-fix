@@ -1,6 +1,6 @@
 # SaveFromNet - YouTube Style Fix
 
-<a href="PROCHTI.md"><img alt="Перевести на Русский" src="https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-4285F4?style=flat&logo=googletranslate&logoColor=white" /></a>
+<a href="PROCHTI.md"><img alt="Перевести на Русском" src="https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8C%20%D0%BD%D0%B0%20%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-4285F4?style=flat&logo=googletranslate&logoColor=white" /></a>
 
 This is a small Chrome extension that fixes the SaveFrom.net extension's stylesheets on YouTube pages to blend more harmoniously with YouTube's design.
 
