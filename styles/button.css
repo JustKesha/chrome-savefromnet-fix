@@ -5,7 +5,7 @@
     --bsf-save-btn-left-side-width: 24.5px;
     --bsf-save-btn-left-side-padding: 6.5px;
     --bsf-save-btn-icon-translate-y: 3px;
-    --bsf-save-btn-sides-gap-width: 15px;
+    --bsf-save-btn-sides-gap-width: 28px;
     --bsf-save-btn-right-side-padding: 8.5px;
     --bsf-save-btn-right-side-text-to-icon-gap: var(--bsf-save-btn-right-side-padding);
     /* Yt action btn height is a static 35.9896px but achieved through other styles not the height param */
