@@ -11,7 +11,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*youtube.com/*",
+        "*://*youtu.be/*"
+      ],
       "css": ["./styles/button.css"],
       "run_at": "document_start"
     }
