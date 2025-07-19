@@ -15,7 +15,7 @@
 ### Требования
 
 - Браузер с поддержкой расширений Chrome (Chrome/Edge/Opera)
-- Установленное [SaveFrom.net extension](https://ru.savefrom.net/11/user.php)
+- Установленное [SaveFrom.net расширение](https://ru.savefrom.net/11/user.php)
 
 ### Установка
 
