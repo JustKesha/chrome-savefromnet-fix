@@ -13,8 +13,8 @@
     {
       "matches": [
         "*://*.youtube.com/*",
-        "*://*youtube.com/*",
-        "*://*youtu.be/*"
+        "*://youtube.com/*",
+        "*://youtu.be/*"
       ],
       "css": ["./styles/button.css"],
       "run_at": "document_start"
