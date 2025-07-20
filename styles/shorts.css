@@ -1,20 +1,24 @@
-/* YouTube Shorts Save Button Styles - Simplified Selectors */
+/****************** Short YouTube Video ******************/
+/* Using maximum specificity to make sure styles are not overwritten */
+/* TODO Should minimize the use of hardcoded values */
+/* TODO Remove unnecessary or repeating styles */
 
 :root {
   /* Shorts specific variables */
   --bsf-shorts-btn-size: 48px;
-  --bsf-shorts-quality-btn-width: 48px;
+  --bsf-shorts-quality-btn-width: var(
+    --bsf-shorts-btn-size
+  );
   --bsf-shorts-quality-btn-height: 32px;
   --bsf-shorts-icon-size: 24px;
   --bsf-shorts-btn-margin: 16px;
 
   /* Theme colors - dark theme defaults */
+  /* FIXME Should make use of YT's CSS variables and leaves hardcoded values as a fallback option */
   --bsf-bg-color: rgba(255, 255, 255, 0.1);
   --bsf-bg-hover: rgba(255, 255, 255, 0.2);
   --bsf-bg-active: rgba(255, 255, 255, 0.15);
   --bsf-text-color: rgb(255, 255, 255);
-  --bsf-border-color: rgba(255, 255, 255, 0.2);
-  --bsf-border-hover: rgba(255, 255, 255, 0.3);
   --bsf-icon-filter: brightness(1) invert(0);
   --bsf-arrow-color: rgba(255, 255, 255, 0.8);
 }
@@ -37,26 +41,26 @@ ytd-reel-player-overlay-renderer #like-button
   padding: 0 !important;
 }
 
-/* General */
 html body
-/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button.button-container.style-scope.ytd-reel-player-overlay-renderer {
+  /* FIXME Dislike buttons appears too close to the comment section, below is a possible solution */
+  transform: translateY(calc(-1 * var(--bsf-shorts-btn-margin) / 2)) !important;
+}
+
+html body
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   width: var(--bsf-shorts-btn-size) !important;
   height: var(--bsf-shorts-btn-size) !important;
-  min-width: var(--bsf-shorts-btn-size) !important;
-  min-height: var(--bsf-shorts-btn-size) !important;
   border-radius: 50% !important;
   border: none !important;
   background-color: var(--bsf-bg-color) !important;
   color: var(--bsf-text-color) !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  transition: all 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
   position: relative !important;
   backdrop-filter: blur(10px) !important;
   margin: 0 !important;
@@ -71,31 +75,20 @@ ytd-reel-player-overlay-renderer #like-button
   z-index: 1 !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn:hover {
   background-color: var(--bsf-bg-hover) !important;
-  transform: scale(1.05) !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn:active {
   background-color: var(--bsf-bg-active) !important;
-  transform: scale(0.95) !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn i {
   position: static !important;
   width: var(--bsf-shorts-icon-size) !important;
@@ -118,11 +111,8 @@ ytd-reel-player-overlay-renderer #like-button
   filter: var(--bsf-icon-filter) !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 #savefrom__yt_btn button {
   position: relative !important;
   display: inline-flex !important;
@@ -134,14 +124,13 @@ ytd-reel-player-overlay-renderer #like-button
   min-height: var(--bsf-shorts-quality-btn-height) !important;
   padding: 0 8px !important;
   background-color: var(--bsf-bg-color) !important;
-  border: 1px solid var(--bsf-border-color) !important;
+  border: 0 solid transparent !important;
   border-radius: 16px !important;
   cursor: pointer !important;
   color: var(--bsf-text-color) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
   font-family: "Roboto", "Arial", sans-serif !important;
-  transition: all 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
   backdrop-filter: blur(10px) !important;
   margin: 0 !important;
   margin-bottom: var(--bsf-shorts-btn-margin) !important;
@@ -150,46 +139,40 @@ ytd-reel-player-overlay-renderer #like-button
   overflow: hidden !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 #savefrom__yt_btn button:hover {
   background-color: var(--bsf-bg-hover) !important;
-  border-color: var(--bsf-border-hover) !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 #savefrom__yt_btn button:active {
   background-color: var(--bsf-bg-active) !important;
-  transform: scale(0.98) !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
+#savefrom__yt_btn button:active {
+  background-color: var(--bsf-bg-active) !important;
+}
+
+html body
+ytd-reel-player-overlay-renderer #like-button
 #savefrom__yt_btn button span {
   margin: 0 !important;
   vertical-align: middle !important;
+  /* Using lower font size for inner button text, default font size for current section is 14px */
   font-size: 12px !important;
   font-weight: 500 !important;
   color: var(--bsf-text-color) !important;
   line-height: 1 !important;
   flex-shrink: 0 !important;
+  transform: translateY(1.5px);
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 #savefrom__yt_btn button i {
   position: absolute !important;
   right: 4px !important;
@@ -202,99 +185,33 @@ ytd-reel-player-overlay-renderer #like-button
   height: 0 !important;
   background: none !important;
   background-image: none !important;
+  
+  /* TODO Add proper paddings between the arrow and resolution before removing this line */
+  display: none !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
-.sf-quick-dl-btn::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 0 !important;
-  height: 0 !important;
-  border-radius: 50% !important;
-  background-color: rgba(255, 255, 255, 0.3) !important;
-  transform: translate(-50%, -50%) !important;
-  transition: width 0.3s cubic-bezier(0.05, 0, 0, 1),
-    height 0.3s cubic-bezier(0.05, 0, 0, 1) !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
-}
-
-/* General */
-html body
-/* YT Specific */
-ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
-.sf-quick-dl-btn:active::before {
-  width: 60px !important;
-  height: 60px !important;
-}
-
-/* General */
-html body
-/* YT Specific */
-ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
-#savefrom__yt_btn button::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 0 !important;
-  height: 0 !important;
-  border-radius: inherit !important;
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  transform: translate(-50%, -50%) !important;
-  transition: width 0.2s ease, height 0.2s ease !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
-}
-
-/* General */
-html body
-/* YT Specific */
-ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
-#savefrom__yt_btn button:active::before {
-  width: calc(100% + 8px) !important;
-  height: calc(100% + 8px) !important;
-}
-
-/* General */
-html body
-/* YT Specific */
-ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn span.sf-btn-name {
   display: none !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 .sf-quick-dl-btn:focus-visible {
   outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
 }
 
-/* General */
 html body
-/* YT Specific */
 ytd-reel-player-overlay-renderer #like-button
-/* SF Specific */
 #savefrom__yt_btn button:focus-visible {
   outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
 }
 
 /****************** LIGHT THEME SUPPORT ******************/
+/* FIXME Should make use of YT's CSS variables and leaves hardcoded values as a fallback option */
 
 /* Light theme variable overrides */
 html[dark="false"] {
@@ -302,8 +219,6 @@ html[dark="false"] {
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
   --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
   --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
   --bsf-icon-filter: brightness(0) !important;
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
@@ -313,8 +228,6 @@ html[light] {
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
   --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
   --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
   --bsf-icon-filter: brightness(0) !important;
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
@@ -324,8 +237,6 @@ html:not([dark]) {
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
   --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
   --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
   --bsf-icon-filter: brightness(0) !important;
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
@@ -335,8 +246,6 @@ ytd-app[dark="false"] {
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
   --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
   --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
   --bsf-icon-filter: brightness(0) !important;
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
@@ -347,66 +256,10 @@ ytd-app[dark="false"] {
     --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
     --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
     --bsf-text-color: rgb(15, 15, 15) !important;
-    --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-    --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
     --bsf-icon-filter: brightness(0) !important;
     --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
   }
 }
 
 /****************** Mobile Responsive ******************/
-@media (max-width: 768px) {
-  :root {
-    --bsf-shorts-btn-size: 44px;
-    --bsf-shorts-quality-btn-width: 44px;
-    --bsf-shorts-quality-btn-height: 28px;
-    --bsf-shorts-icon-size: 20px;
-    --bsf-shorts-btn-margin: 12px;
-  }
-
-  /* General */
-  html body
-  /* YT Specific */
-  ytd-reel-player-overlay-renderer #like-button
-  /* SF Specific */
-  #savefrom__yt_btn button span {
-    font-size: 11px !important;
-  }
-
-  /* General */
-  html body
-  /* YT Specific */
-  ytd-reel-player-overlay-renderer #like-button
-  /* SF Specific */
-  #savefrom__yt_btn button i {
-    border-width: 3px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --bsf-shorts-btn-size: 40px;
-    --bsf-shorts-quality-btn-width: 40px;
-    --bsf-shorts-quality-btn-height: 24px;
-    --bsf-shorts-icon-size: 18px;
-    --bsf-shorts-btn-margin: 10px;
-  }
-
-  /* General */
-  html body
-  /* YT Specific */
-  ytd-reel-player-overlay-renderer #like-button
-  /* SF Specific */
-  #savefrom__yt_btn button {
-    padding: 0 6px !important;
-  }
-
-  /* General */
-  html body
-  /* YT Specific */
-  ytd-reel-player-overlay-renderer #like-button
-  /* SF Specific */
-  #savefrom__yt_btn button span {
-    font-size: 10px !important;
-  }
-}
+/* TODO Add proper mobile responsiveness - colors are changes when going from pc to mobile view on yt shorts page */
