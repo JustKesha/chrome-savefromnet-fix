@@ -43,8 +43,8 @@ ytd-reel-player-overlay-renderer #like-button
 
 html body
 ytd-reel-player-overlay-renderer #like-button.button-container.style-scope.ytd-reel-player-overlay-renderer {
-  /* FIXME Dislike buttons appears too close to the comment section, below is a possible solution */
-  transform: translateY(calc(-1 * var(--bsf-shorts-btn-margin) / 2)) !important;
+  /* Dislike buttons appears too close to the comment section, moving the whole dislike + like + save section up */
+  transform: translateY(calc(-1 * var(--bsf-shorts-btn-margin))) !important;
 }
 
 html body
