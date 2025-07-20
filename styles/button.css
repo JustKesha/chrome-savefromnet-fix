@@ -1,7 +1,7 @@
+/****************** Basic YouTube Video ******************/
 /* Using maximum specificity to make sure styles are not overwritten */
 
 :root {
-    /* Magic Numbers */
     --bsf-save-btn-left-side-width: 24.5px;
     --bsf-save-btn-left-side-padding: 6.5px;
     --bsf-save-btn-icon-translate-y: 3px;
@@ -12,8 +12,6 @@
     /* FIXME Github issue #1 (manifest -> homepage_url) */
     --bsf-yt-action-btn-height: 35.99px;
 }
-
-/****************** Basic YouTube Video ******************/
 
 /* General */
 html body
@@ -86,7 +84,3 @@ html body
     transform: translateY(var(--bsf-save-btn-icon-translate-y)) !important;
     border-color: var(--yt-spec-text-primary,rgb(241, 241, 241)) transparent transparent !important;
 }
-
-/****************** Short YouTube Video ******************/
-
-/* TODO Add Shorts Support*/
