@@ -1,4 +1,4 @@
-/* YouTube Shorts Save Button Styles */
+/* YouTube Shorts Save Button Styles - IMPROVED Light Theme Support */
 /* Using maximum specificity to override YouTube's styles */
 
 :root {
@@ -7,7 +7,17 @@
   --bsf-shorts-quality-btn-width: 48px;
   --bsf-shorts-quality-btn-height: 32px;
   --bsf-shorts-icon-size: 24px;
-  --bsf-shorts-btn-margin: 16px; /* Increased from 8px to 16px */
+  --bsf-shorts-btn-margin: 16px;
+
+  /* Theme colors - dark theme defaults */
+  --bsf-bg-color: rgba(255, 255, 255, 0.1);
+  --bsf-bg-hover: rgba(255, 255, 255, 0.2);
+  --bsf-bg-active: rgba(255, 255, 255, 0.15);
+  --bsf-text-color: rgb(255, 255, 255);
+  --bsf-border-color: rgba(255, 255, 255, 0.2);
+  --bsf-border-hover: rgba(255, 255, 255, 0.3);
+  --bsf-icon-filter: brightness(1) invert(0);
+  --bsf-arrow-color: rgba(255, 255, 255, 0.8);
 }
 
 /****************** YouTube Shorts Save Button ******************/
@@ -40,11 +50,8 @@ html
   min-height: var(--bsf-shorts-btn-size) !important;
   border-radius: 50% !important;
   border: none !important;
-  background-color: var(
-    --yt-spec-static-overlay-button-secondary,
-    rgba(255, 255, 255, 0.1)
-  ) !important;
-  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  background-color: var(--bsf-bg-color) !important;
+  color: var(--bsf-text-color) !important;
   cursor: pointer !important;
   text-decoration: none !important;
   transition: all 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
@@ -56,6 +63,10 @@ html
   line-height: 1 !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
 }
 
 /* Hover state */
@@ -65,10 +76,7 @@ html
   #like-button
   #savefrom__yt_btn
   .sf-quick-dl-btn:hover {
-  background-color: var(
-    --yt-spec-button-chip-background-hover,
-    rgba(255, 255, 255, 0.2)
-  ) !important;
+  background-color: var(--bsf-bg-hover) !important;
   transform: scale(1.05) !important;
 }
 
@@ -79,10 +87,7 @@ html
   #like-button
   #savefrom__yt_btn
   .sf-quick-dl-btn:active {
-  background-color: var(
-    --yt-spec-static-overlay-button-secondary-active,
-    rgba(255, 255, 255, 0.15)
-  ) !important;
+  background-color: var(--bsf-bg-active) !important;
   transform: scale(0.95) !important;
 }
 
@@ -97,7 +102,7 @@ html
   position: static !important;
   width: var(--bsf-shorts-icon-size) !important;
   height: var(--bsf-shorts-icon-size) !important;
-  background-size: 20px !important;
+  background-size: 20px 20px !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   left: 0 !important;
@@ -105,6 +110,14 @@ html
   transform: none !important;
   display: block !important;
   flex-shrink: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-style: normal !important;
+  font-size: 16px !important;
+  line-height: var(--bsf-shorts-icon-size) !important;
+  text-align: center !important;
+  color: var(--bsf-text-color) !important;
+  filter: var(--bsf-icon-filter) !important;
 }
 
 /* Quality selector button */
@@ -123,14 +136,11 @@ html
   min-width: var(--bsf-shorts-quality-btn-width) !important;
   min-height: var(--bsf-shorts-quality-btn-height) !important;
   padding: 0 8px !important;
-  background-color: var(
-    --yt-spec-static-overlay-button-secondary,
-    rgba(255, 255, 255, 0.1)
-  ) !important;
-  border: 1px solid var(--yt-spec-10-percent-layer, rgba(255, 255, 255, 0.2)) !important;
+  background-color: var(--bsf-bg-color) !important;
+  border: 1px solid var(--bsf-border-color) !important;
   border-radius: 16px !important;
   cursor: pointer !important;
-  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  color: var(--bsf-text-color) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
   font-family: "Roboto", "Arial", sans-serif !important;
@@ -150,14 +160,8 @@ html
   #like-button
   #savefrom__yt_btn
   button:hover {
-  background-color: var(
-    --yt-spec-button-chip-background-hover,
-    rgba(255, 255, 255, 0.2)
-  ) !important;
-  border-color: var(
-    --yt-spec-20-percent-layer,
-    rgba(255, 255, 255, 0.3)
-  ) !important;
+  background-color: var(--bsf-bg-hover) !important;
+  border-color: var(--bsf-border-hover) !important;
 }
 
 /* Quality button active state */
@@ -167,10 +171,7 @@ html
   #like-button
   #savefrom__yt_btn
   button:active {
-  background-color: var(
-    --yt-spec-static-overlay-button-secondary-active,
-    rgba(255, 255, 255, 0.15)
-  ) !important;
+  background-color: var(--bsf-bg-active) !important;
   transform: scale(0.98) !important;
 }
 
@@ -186,7 +187,7 @@ html
   vertical-align: middle !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  color: var(--bsf-text-color) !important;
   line-height: 1 !important;
   flex-shrink: 0 !important;
 }
@@ -205,15 +206,14 @@ html
   transform: translateY(-50%) !important;
   border-width: 4px !important;
   border-style: solid !important;
-  border-color: var(--yt-spec-text-primary, rgba(255, 255, 255, 0.8))
-    transparent transparent !important;
+  border-color: var(--bsf-arrow-color) transparent transparent !important;
   width: 0 !important;
   height: 0 !important;
   background: none !important;
   background-image: none !important;
 }
 
-/* Touch feedback effect for download button */
+/* Touch feedback effects */
 html
   body
   ytd-reel-player-overlay-renderer
@@ -245,7 +245,6 @@ html
   height: 60px !important;
 }
 
-/* Touch feedback effect for quality button */
 html
   body
   ytd-reel-player-overlay-renderer
@@ -294,7 +293,7 @@ html
   #like-button
   #savefrom__yt_btn
   .sf-quick-dl-btn:focus-visible {
-  outline: 2px solid var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
 }
 
@@ -304,8 +303,111 @@ html
   #like-button
   #savefrom__yt_btn
   button:focus-visible {
-  outline: 2px solid var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
+}
+
+/****************** LIGHT THEME SUPPORT - COMPREHENSIVE FIX ******************/
+
+/* Method 1: CSS Variables approach for light theme */
+html[dark="false"] {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+html[light] {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+html:not([dark]) {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+/* Method 2: Alternative body-based detection */
+body[class*="light-theme"],
+body.light-theme,
+body[data-theme="light"] {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) invert(1) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+/* Method 3: System preference-based detection */
+@media (prefers-color-scheme: light) {
+  html:not([dark="true"]) {
+    --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+    --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+    --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+    --bsf-text-color: rgb(15, 15, 15) !important;
+    --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+    --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+    --bsf-icon-filter: brightness(0) !important;
+    --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+  }
+}
+
+/* Method 4: Universal fallback selectors */
+[data-theme*="light"],
+[theme="light"],
+.light-mode {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) invert(1) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+/* Method 5: Specific YouTube light theme class detection */
+ytd-app[dark="false"] {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) invert(1) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
+}
+
+/* Method 6: Force light theme when specific light theme indicators are present */
+html[style*="color-scheme: light"],
+body[style*="color-scheme: light"] {
+  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
+  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
+  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
+  --bsf-text-color: rgb(15, 15, 15) !important;
+  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
+  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
+  --bsf-icon-filter: brightness(0) invert(1) !important;
+  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
 
 /****************** Mobile Responsive ******************/
@@ -315,7 +417,7 @@ html
     --bsf-shorts-quality-btn-width: 44px;
     --bsf-shorts-quality-btn-height: 28px;
     --bsf-shorts-icon-size: 20px;
-    --bsf-shorts-btn-margin: 12px; /* Increased from 6px to 12px */
+    --bsf-shorts-btn-margin: 12px;
   }
 
   html
@@ -345,7 +447,7 @@ html
     --bsf-shorts-quality-btn-width: 40px;
     --bsf-shorts-quality-btn-height: 24px;
     --bsf-shorts-icon-size: 18px;
-    --bsf-shorts-btn-margin: 10px; /* Increased from 4px to 10px */
+    --bsf-shorts-btn-margin: 10px;
   }
 
   html
@@ -365,64 +467,5 @@ html
     button
     span {
     font-size: 10px !important;
-  }
-}
-
-/****************** Dark/Light Theme Support ******************/
-@media (prefers-color-scheme: light) {
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    .sf-quick-dl-btn {
-    background-color: var(
-      --yt-spec-static-overlay-button-secondary,
-      rgba(0, 0, 0, 0.05)
-    ) !important;
-  }
-
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    .sf-quick-dl-btn:hover {
-    background-color: var(
-      --yt-spec-button-chip-background-hover,
-      rgba(0, 0, 0, 0.1)
-    ) !important;
-  }
-
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button {
-    background-color: var(
-      --yt-spec-static-overlay-button-secondary,
-      rgba(0, 0, 0, 0.05)
-    ) !important;
-    border-color: var(
-      --yt-spec-10-percent-layer,
-      rgba(0, 0, 0, 0.1)
-    ) !important;
-  }
-
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button:hover {
-    background-color: var(
-      --yt-spec-button-chip-background-hover,
-      rgba(0, 0, 0, 0.1)
-    ) !important;
-    border-color: var(
-      --yt-spec-20-percent-layer,
-      rgba(0, 0, 0, 0.2)
-    ) !important;
   }
 }
