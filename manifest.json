@@ -11,12 +11,13 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.youtube.com/*",
-        "*://youtube.com/*",
-        "*://youtu.be/*"
-      ],
+      "matches": ["*://*.youtube.com/*", "*://youtube.com/*", "*://youtu.be/*"],
       "css": ["./styles/button.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.youtube.com/shorts/*", "*://youtube.com/shorts/*"],
+      "css": ["./styles/shorts.css"],
       "run_at": "document_start"
     }
   ],

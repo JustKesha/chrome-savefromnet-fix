@@ -1,0 +1,428 @@
+/* YouTube Shorts Save Button Styles */
+/* Using maximum specificity to override YouTube's styles */
+
+:root {
+  /* Shorts specific variables */
+  --bsf-shorts-btn-size: 48px;
+  --bsf-shorts-quality-btn-width: 48px;
+  --bsf-shorts-quality-btn-height: 32px;
+  --bsf-shorts-icon-size: 24px;
+  --bsf-shorts-btn-margin: 16px; /* Increased from 8px to 16px */
+}
+
+/****************** YouTube Shorts Save Button ******************/
+
+/* Shorts container styling */
+html body ytd-reel-player-overlay-renderer #like-button #savefrom__yt_btn {
+  font-family: "Roboto", "Arial", sans-serif !important;
+  font-size: 13px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Main download button - circular like other Shorts buttons */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: var(--bsf-shorts-btn-size) !important;
+  height: var(--bsf-shorts-btn-size) !important;
+  min-width: var(--bsf-shorts-btn-size) !important;
+  min-height: var(--bsf-shorts-btn-size) !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background-color: var(
+    --yt-spec-static-overlay-button-secondary,
+    rgba(255, 255, 255, 0.1)
+  ) !important;
+  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
+  position: relative !important;
+  backdrop-filter: blur(10px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 8px !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Hover state */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn:hover {
+  background-color: var(
+    --yt-spec-button-chip-background-hover,
+    rgba(255, 255, 255, 0.2)
+  ) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Active state */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn:active {
+  background-color: var(
+    --yt-spec-static-overlay-button-secondary-active,
+    rgba(255, 255, 255, 0.15)
+  ) !important;
+  transform: scale(0.95) !important;
+}
+
+/* Download icon styling */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn
+  i {
+  position: static !important;
+  width: var(--bsf-shorts-icon-size) !important;
+  height: var(--bsf-shorts-icon-size) !important;
+  background-size: 20px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Quality selector button */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: var(--bsf-shorts-quality-btn-width) !important;
+  height: var(--bsf-shorts-quality-btn-height) !important;
+  min-width: var(--bsf-shorts-quality-btn-width) !important;
+  min-height: var(--bsf-shorts-quality-btn-height) !important;
+  padding: 0 8px !important;
+  background-color: var(
+    --yt-spec-static-overlay-button-secondary,
+    rgba(255, 255, 255, 0.1)
+  ) !important;
+  border: 1px solid var(--yt-spec-10-percent-layer, rgba(255, 255, 255, 0.2)) !important;
+  border-radius: 16px !important;
+  cursor: pointer !important;
+  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  font-family: "Roboto", "Arial", sans-serif !important;
+  transition: all 0.2s cubic-bezier(0.05, 0, 0, 1) !important;
+  backdrop-filter: blur(10px) !important;
+  margin: 0 !important;
+  margin-bottom: var(--bsf-shorts-btn-margin) !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Quality button hover state */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button:hover {
+  background-color: var(
+    --yt-spec-button-chip-background-hover,
+    rgba(255, 255, 255, 0.2)
+  ) !important;
+  border-color: var(
+    --yt-spec-20-percent-layer,
+    rgba(255, 255, 255, 0.3)
+  ) !important;
+}
+
+/* Quality button active state */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button:active {
+  background-color: var(
+    --yt-spec-static-overlay-button-secondary-active,
+    rgba(255, 255, 255, 0.15)
+  ) !important;
+  transform: scale(0.98) !important;
+}
+
+/* Quality text styling */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button
+  span {
+  margin: 0 !important;
+  vertical-align: middle !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Dropdown arrow styling */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button
+  i {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  border-width: 4px !important;
+  border-style: solid !important;
+  border-color: var(--yt-spec-text-primary, rgba(255, 255, 255, 0.8))
+    transparent transparent !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Touch feedback effect for download button */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-radius: 50% !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width 0.3s cubic-bezier(0.05, 0, 0, 1),
+    height 0.3s cubic-bezier(0.05, 0, 0, 1) !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn:active::before {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+/* Touch feedback effect for quality button */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-radius: inherit !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width 0.2s ease, height 0.2s ease !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button:active::before {
+  width: calc(100% + 8px) !important;
+  height: calc(100% + 8px) !important;
+}
+
+/* Hide button name text for Shorts */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn
+  span.sf-btn-name {
+  display: none !important;
+}
+
+/* Focus states for accessibility */
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  .sf-quick-dl-btn:focus-visible {
+  outline: 2px solid var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  outline-offset: 2px !important;
+}
+
+html
+  body
+  ytd-reel-player-overlay-renderer
+  #like-button
+  #savefrom__yt_btn
+  button:focus-visible {
+  outline: 2px solid var(--yt-spec-text-primary, rgb(255, 255, 255)) !important;
+  outline-offset: 2px !important;
+}
+
+/****************** Mobile Responsive ******************/
+@media (max-width: 768px) {
+  :root {
+    --bsf-shorts-btn-size: 44px;
+    --bsf-shorts-quality-btn-width: 44px;
+    --bsf-shorts-quality-btn-height: 28px;
+    --bsf-shorts-icon-size: 20px;
+    --bsf-shorts-btn-margin: 12px; /* Increased from 6px to 12px */
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button
+    span {
+    font-size: 11px !important;
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button
+    i {
+    border-width: 3px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --bsf-shorts-btn-size: 40px;
+    --bsf-shorts-quality-btn-width: 40px;
+    --bsf-shorts-quality-btn-height: 24px;
+    --bsf-shorts-icon-size: 18px;
+    --bsf-shorts-btn-margin: 10px; /* Increased from 4px to 10px */
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button {
+    padding: 0 6px !important;
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button
+    span {
+    font-size: 10px !important;
+  }
+}
+
+/****************** Dark/Light Theme Support ******************/
+@media (prefers-color-scheme: light) {
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    .sf-quick-dl-btn {
+    background-color: var(
+      --yt-spec-static-overlay-button-secondary,
+      rgba(0, 0, 0, 0.05)
+    ) !important;
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    .sf-quick-dl-btn:hover {
+    background-color: var(
+      --yt-spec-button-chip-background-hover,
+      rgba(0, 0, 0, 0.1)
+    ) !important;
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button {
+    background-color: var(
+      --yt-spec-static-overlay-button-secondary,
+      rgba(0, 0, 0, 0.05)
+    ) !important;
+    border-color: var(
+      --yt-spec-10-percent-layer,
+      rgba(0, 0, 0, 0.1)
+    ) !important;
+  }
+
+  html
+    body
+    ytd-reel-player-overlay-renderer
+    #like-button
+    #savefrom__yt_btn
+    button:hover {
+    background-color: var(
+      --yt-spec-button-chip-background-hover,
+      rgba(0, 0, 0, 0.1)
+    ) !important;
+    border-color: var(
+      --yt-spec-20-percent-layer,
+      rgba(0, 0, 0, 0.2)
+    ) !important;
+  }
+}
