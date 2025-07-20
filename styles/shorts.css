@@ -1,5 +1,4 @@
-/* YouTube Shorts Save Button Styles - IMPROVED Light Theme Support */
-/* Using maximum specificity to override YouTube's styles */
+/* YouTube Shorts Save Button Styles - Simplified Selectors */
 
 :root {
   /* Shorts specific variables */
@@ -22,8 +21,12 @@
 
 /****************** YouTube Shorts Save Button ******************/
 
-/* Shorts container styling */
-html body ytd-reel-player-overlay-renderer #like-button #savefrom__yt_btn {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn {
   font-family: "Roboto", "Arial", sans-serif !important;
   font-size: 13px !important;
   display: flex !important;
@@ -34,13 +37,12 @@ html body ytd-reel-player-overlay-renderer #like-button #savefrom__yt_btn {
   padding: 0 !important;
 }
 
-/* Main download button - circular like other Shorts buttons */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -69,36 +71,32 @@ html
   z-index: 1 !important;
 }
 
-/* Hover state */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn:hover {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn:hover {
   background-color: var(--bsf-bg-hover) !important;
   transform: scale(1.05) !important;
 }
 
-/* Active state */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn:active {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn:active {
   background-color: var(--bsf-bg-active) !important;
   transform: scale(0.95) !important;
 }
 
-/* Download icon styling */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn
-  i {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn i {
   position: static !important;
   width: var(--bsf-shorts-icon-size) !important;
   height: var(--bsf-shorts-icon-size) !important;
@@ -120,13 +118,12 @@ html
   filter: var(--bsf-icon-filter) !important;
 }
 
-/* Quality selector button */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button {
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -153,36 +150,32 @@ html
   overflow: hidden !important;
 }
 
-/* Quality button hover state */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button:hover {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button:hover {
   background-color: var(--bsf-bg-hover) !important;
   border-color: var(--bsf-border-hover) !important;
 }
 
-/* Quality button active state */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button:active {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button:active {
   background-color: var(--bsf-bg-active) !important;
   transform: scale(0.98) !important;
 }
 
-/* Quality text styling */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button
-  span {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button span {
   margin: 0 !important;
   vertical-align: middle !important;
   font-size: 12px !important;
@@ -192,14 +185,12 @@ html
   flex-shrink: 0 !important;
 }
 
-/* Dropdown arrow styling */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button
-  i {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button i {
   position: absolute !important;
   right: 4px !important;
   top: 50% !important;
@@ -213,13 +204,12 @@ html
   background-image: none !important;
 }
 
-/* Touch feedback effects */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn::before {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn::before {
   content: "" !important;
   position: absolute !important;
   top: 50% !important;
@@ -235,22 +225,22 @@ html
   pointer-events: none !important;
 }
 
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn:active::before {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn:active::before {
   width: 60px !important;
   height: 60px !important;
 }
 
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button::before {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button::before {
   content: "" !important;
   position: absolute !important;
   top: 50% !important;
@@ -265,51 +255,48 @@ html
   pointer-events: none !important;
 }
 
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button:active::before {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button:active::before {
   width: calc(100% + 8px) !important;
   height: calc(100% + 8px) !important;
 }
 
-/* Hide button name text for Shorts */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn
-  span.sf-btn-name {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn span.sf-btn-name {
   display: none !important;
 }
 
-/* Focus states for accessibility */
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  .sf-quick-dl-btn:focus-visible {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+.sf-quick-dl-btn:focus-visible {
   outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
 }
 
-html
-  body
-  ytd-reel-player-overlay-renderer
-  #like-button
-  #savefrom__yt_btn
-  button:focus-visible {
+/* General */
+html body
+/* YT Specific */
+ytd-reel-player-overlay-renderer #like-button
+/* SF Specific */
+#savefrom__yt_btn button:focus-visible {
   outline: 2px solid var(--bsf-text-color) !important;
   outline-offset: 2px !important;
 }
 
-/****************** LIGHT THEME SUPPORT - COMPREHENSIVE FIX ******************/
+/****************** LIGHT THEME SUPPORT ******************/
 
-/* Method 1: CSS Variables approach for light theme */
+/* Light theme variable overrides */
 html[dark="false"] {
   --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
@@ -343,21 +330,17 @@ html:not([dark]) {
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
 
-/* Method 2: Alternative body-based detection */
-body[class*="light-theme"],
-body.light-theme,
-body[data-theme="light"] {
+ytd-app[dark="false"] {
   --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
   --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
   --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
   --bsf-text-color: rgb(15, 15, 15) !important;
   --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
   --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
-  --bsf-icon-filter: brightness(0) invert(1) !important;
+  --bsf-icon-filter: brightness(0) !important;
   --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
 }
 
-/* Method 3: System preference-based detection */
 @media (prefers-color-scheme: light) {
   html:not([dark="true"]) {
     --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
@@ -371,45 +354,6 @@ body[data-theme="light"] {
   }
 }
 
-/* Method 4: Universal fallback selectors */
-[data-theme*="light"],
-[theme="light"],
-.light-mode {
-  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
-  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
-  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
-  --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
-  --bsf-icon-filter: brightness(0) invert(1) !important;
-  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
-}
-
-/* Method 5: Specific YouTube light theme class detection */
-ytd-app[dark="false"] {
-  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
-  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
-  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
-  --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
-  --bsf-icon-filter: brightness(0) invert(1) !important;
-  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
-}
-
-/* Method 6: Force light theme when specific light theme indicators are present */
-html[style*="color-scheme: light"],
-body[style*="color-scheme: light"] {
-  --bsf-bg-color: rgba(0, 0, 0, 0.08) !important;
-  --bsf-bg-hover: rgba(0, 0, 0, 0.12) !important;
-  --bsf-bg-active: rgba(0, 0, 0, 0.1) !important;
-  --bsf-text-color: rgb(15, 15, 15) !important;
-  --bsf-border-color: rgba(0, 0, 0, 0.15) !important;
-  --bsf-border-hover: rgba(0, 0, 0, 0.25) !important;
-  --bsf-icon-filter: brightness(0) invert(1) !important;
-  --bsf-arrow-color: rgba(15, 15, 15, 0.8) !important;
-}
-
 /****************** Mobile Responsive ******************/
 @media (max-width: 768px) {
   :root {
@@ -420,23 +364,21 @@ body[style*="color-scheme: light"] {
     --bsf-shorts-btn-margin: 12px;
   }
 
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button
-    span {
+  /* General */
+  html body
+  /* YT Specific */
+  ytd-reel-player-overlay-renderer #like-button
+  /* SF Specific */
+  #savefrom__yt_btn button span {
     font-size: 11px !important;
   }
 
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button
-    i {
+  /* General */
+  html body
+  /* YT Specific */
+  ytd-reel-player-overlay-renderer #like-button
+  /* SF Specific */
+  #savefrom__yt_btn button i {
     border-width: 3px !important;
   }
 }
@@ -450,22 +392,21 @@ body[style*="color-scheme: light"] {
     --bsf-shorts-btn-margin: 10px;
   }
 
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button {
+  /* General */
+  html body
+  /* YT Specific */
+  ytd-reel-player-overlay-renderer #like-button
+  /* SF Specific */
+  #savefrom__yt_btn button {
     padding: 0 6px !important;
   }
 
-  html
-    body
-    ytd-reel-player-overlay-renderer
-    #like-button
-    #savefrom__yt_btn
-    button
-    span {
+  /* General */
+  html body
+  /* YT Specific */
+  ytd-reel-player-overlay-renderer #like-button
+  /* SF Specific */
+  #savefrom__yt_btn button span {
     font-size: 10px !important;
   }
 }
