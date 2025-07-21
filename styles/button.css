@@ -2,15 +2,61 @@
 /* Using maximum specificity to make sure styles are not overwritten */
 
 :root {
-    --bsf-save-btn-left-side-width: 24.5px;
-    --bsf-save-btn-left-side-padding: 6.5px;
-    --bsf-save-btn-icon-translate-y: 3px;
-    --bsf-save-btn-sides-gap-width: 28px;
-    --bsf-save-btn-right-side-padding: 8.5px;
-    --bsf-save-btn-right-side-text-to-icon-gap: var(--bsf-save-btn-right-side-padding);
-    /* Yt action btn height is a static 35.9896px but achieved through other styles not the height param */
-    /* FIXME Github issue #1 (manifest -> homepage_url) */
-    --bsf-yt-action-btn-height: 35.99px;
+  --bsf-save-btn-left-side-width: 24.5px;
+  --bsf-save-btn-left-side-padding: 6.5px;
+  --bsf-save-btn-icon-translate-y: 3px;
+  --bsf-save-btn-sides-gap-width: 28px;
+  --bsf-save-btn-right-side-padding: 8.5px;
+  --bsf-save-btn-right-side-text-to-icon-gap: var(
+    --bsf-save-btn-right-side-padding
+  );
+  /* Yt action btn height is a static 35.9896px but achieved through other styles not the height param */
+  /* FIXME Github issue #1 (manifest -> homepage_url) */
+  --bsf-yt-action-btn-height: 35.99px;
+}
+
+/* Theme-aware color variables */
+/* Dark theme colors */
+html[dark] {
+  --bsf-button-bg: rgba(255, 255, 255, 0.1);
+  --bsf-button-bg-hover: rgba(255, 255, 255, 0.2);
+  --bsf-text-color: rgb(241, 241, 241);
+  --bsf-border-color: rgb(241, 241, 241);
+}
+
+/* Light theme colors */
+html:not([dark]) {
+  --bsf-button-bg: rgba(0, 0, 0, 0.05);
+  --bsf-button-bg-hover: rgba(0, 0, 0, 0.1);
+  --bsf-text-color: rgb(15, 15, 15);
+  --bsf-border-color: rgb(15, 15, 15);
+}
+
+/* Fallback for when YouTube uses different theme detection */
+[system-icons] {
+  --bsf-button-bg: var(
+    --yt-spec-static-overlay-button-secondary,
+    rgba(0, 0, 0, 0.05)
+  );
+  --bsf-button-bg-hover: var(
+    --yt-spec-button-chip-background-hover,
+    rgba(0, 0, 0, 0.1)
+  );
+  --bsf-text-color: var(--yt-spec-text-primary, rgb(15, 15, 15));
+  --bsf-border-color: var(--yt-spec-text-primary, rgb(15, 15, 15));
+}
+
+[system-icons][dark] {
+  --bsf-button-bg: var(
+    --yt-spec-static-overlay-button-secondary,
+    rgba(255, 255, 255, 0.1)
+  );
+  --bsf-button-bg-hover: var(
+    --yt-spec-button-chip-background-hover,
+    rgba(255, 255, 255, 0.2)
+  );
+  --bsf-text-color: var(--yt-spec-text-primary, rgb(241, 241, 241));
+  --bsf-border-color: var(--yt-spec-text-primary, rgb(241, 241, 241));
 }
 
 /* General */
@@ -19,68 +65,194 @@ html body
 #actions #actions-inner #menu #top-level-buttons-computed
 /* SF Specific */
 .sf-quick-dl-btn {
-    height: var(--bsf-yt-action-btn-height) !important;
-    background-color: var(--yt-spec-static-overlay-button-secondary,rgba(255,255,255,.1)) !important;
-    border: none !important;
-    border-left: solid var(--bsf-save-btn-left-side-padding) transparent !important;
-    padding-left: var(--bsf-save-btn-left-side-width) !important;
-    padding-right: calc(var(--bsf-save-btn-sides-gap-width)/2) !important;
+  height: var(--bsf-yt-action-btn-height) !important;
+  background-color: var(--bsf-button-bg) !important;
+  border: none !important;
+  border-left: solid var(--bsf-save-btn-left-side-padding) transparent !important;
+  padding-left: var(--bsf-save-btn-left-side-width) !important;
+  padding-right: calc(var(--bsf-save-btn-sides-gap-width) / 2) !important;
+  transition: background-color 0.2s ease !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-.sf-quick-dl-btn:hover {
-    background-color: var(--yt-spec-button-chip-background-hover,rgba(255,255,255,.2)) !important;
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn:hover {
+  background-color: var(--bsf-button-bg-hover) !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-.sf-quick-dl-btn i {
-    transform: translateY(var(--bsf-save-btn-icon-translate-y)) !important;
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn
+  i {
+  transform: translateY(var(--bsf-save-btn-icon-translate-y)) !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-#savefrom__yt_btn .sf-quick-dl-btn span.sf-btn-name {
-    display: none !important;
+/* Dark theme - white download arrow */
+html[dark]
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn
+  i,
+[system-icons][dark]
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn
+  i {
+  color: rgb(241, 241, 241) !important;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGlkPSJzdmcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNIDQsMCA0LDggMCw4IDgsMTYgMTYsOCAxMiw4IDEyLDAgNCwwIHoiIGZpbGw9IiNmZmZmZmYiIC8+PC9zdmc+") !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-#savefrom__yt_btn button {
-    height: var(--bsf-yt-action-btn-height) !important;
-    background-color: var(--yt-spec-static-overlay-button-secondary,rgba(255,255,255,.1)) !important;
-    border-width: 0 !important;
-    border-color: transparent !important;
-    border-right: solid var(--bsf-save-btn-right-side-padding) transparent !important;
-    margin-left: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: calc(var(--bsf-save-btn-sides-gap-width)/2) !important;
-    /* Hardcoding 15 as a base value from SaveFrom.net to achieve 0 space between span and i on button */
-    padding-right: calc(15px + var(--bsf-save-btn-right-side-text-to-icon-gap)) !important;
+/* Light theme - black download arrow */
+html:not([dark])
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn
+  i,
+[system-icons]:not([dark])
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  .sf-quick-dl-btn
+  i {
+  color: rgb(15, 15, 15) !important;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGlkPSJzdmcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNIDQsMCA0LDggMCw4IDgsMTYgMTYsOCAxMiw4IDEyLDAgNCwwIHoiIGZpbGw9IiMwMDAwMDAiIC8+PC9zdmc+") !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-#savefrom__yt_btn button:hover {
-    background-color: var(--yt-spec-button-chip-background-hover,rgba(255,255,255,.2)) !important;
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  .sf-quick-dl-btn
+  span.sf-btn-name {
+  display: none !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-#savefrom__yt_btn button span {
-    color: var(--yt-spec-text-primary,rgb(241, 241, 241)) !important;
-
-    /* Hardcoded in .yt-spec-button-shape-next */
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    font-family: "Roboto", "Arial", sans-serif !important;
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button {
+  height: var(--bsf-yt-action-btn-height) !important;
+  background-color: var(--bsf-button-bg) !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+  border-right: solid var(--bsf-save-btn-right-side-padding) transparent !important;
+  margin-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: calc(var(--bsf-save-btn-sides-gap-width) / 2) !important;
+  /* Hardcoding 15 as a base value from SaveFrom.net to achieve 0 space between span and i on button */
+  padding-right: calc(
+    15px + var(--bsf-save-btn-right-side-text-to-icon-gap)
+  ) !important;
+  transition: background-color 0.2s ease !important;
 }
 
-html body
-#actions #actions-inner #menu #top-level-buttons-computed
-#savefrom__yt_btn button i {
-    transform: translateY(var(--bsf-save-btn-icon-translate-y)) !important;
-    border-color: var(--yt-spec-text-primary,rgb(241, 241, 241)) transparent transparent !important;
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button:hover {
+  background-color: var(--bsf-button-bg-hover) !important;
+}
+
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  span {
+  color: var(--bsf-text-color) !important;
+
+  /* Hardcoded in .yt-spec-button-shape-next */
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  font-family: "Roboto", "Arial", sans-serif !important;
+}
+
+html
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  i {
+  transform: translateY(var(--bsf-save-btn-icon-translate-y)) !important;
+}
+
+/* Dark theme - white arrow */
+html[dark]
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  i,
+[system-icons][dark]
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  i {
+  border-color: rgb(241, 241, 241) transparent transparent !important;
+}
+
+/* Light theme - black arrow */
+html:not([dark])
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  i,
+[system-icons]:not([dark])
+  body
+  #actions
+  #actions-inner
+  #menu
+  #top-level-buttons-computed
+  #savefrom__yt_btn
+  button
+  i {
+  border-color: rgb(15, 15, 15) transparent transparent !important;
 }
