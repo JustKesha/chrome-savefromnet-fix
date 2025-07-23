@@ -2,6 +2,8 @@
 /* Using maximum specificity to make sure styles are not overwritten */
 /* TODO Should minimize the use of hardcoded values */
 /* TODO Remove unnecessary or repeating styles */
+/* TODO Should avoid the use of custom colors and switch fully to yt css variables,
+   TODO use current colors as a fallback option */
 
 :root {
   /* Shorts specific variables */
