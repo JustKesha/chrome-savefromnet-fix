@@ -1,5 +1,7 @@
 /****************** Basic YouTube Video ******************/
 /* Using maximum specificity to make sure styles are not overwritten */
+/* TODO Should avoid the use of custom colors and switch fully to yt css variables,
+   TODO use current colors as a fallback option */
 
 :root {
     --bsf-save-btn-left-side-width: 24.5px;
